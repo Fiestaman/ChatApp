@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { UseAuth } from "../../context/AuthContext";
-import { generateAvatar } from "../../utils/GenerateAvatar";
+import { generateAvatars } from "../../utils/GenerateAvatars";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -20,7 +20,7 @@ export default function Profile() {
 
   useEffect(() => {
     const fetchData = () => {
-      const res = generateAvatar();
+      const res = generateAvatars();
       setAvatars(res);
     };
 
@@ -29,7 +29,7 @@ export default function Profile() {
 
   const handleRandom = (e) => {
     e.preventDefault();
-    setAvatars(generateAvatar());
+    setAvatars(generateAvatars());
   };
 
   const handleFormSubmit = async (e) => {
