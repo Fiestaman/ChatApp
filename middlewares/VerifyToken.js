@@ -4,8 +4,8 @@ export const VerifyToken = async (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
 
   try {
-    const decodeValue = await auth.verifyIdToken(token);
-    if (decodeValue) {
+    if (token) {
+      const decodeValue = await auth.verifyIdToken(token);
       req.user = decodeValue;
       return next();
     } else {
@@ -13,7 +13,7 @@ export const VerifyToken = async (req, res, next) => {
       return next();
     }
   } catch (e) {
-    return res.json({ message: "Internal Error" });
+    return res.json({ error: `${e}` });
   }
 };
 
@@ -29,6 +29,6 @@ export const VerifySocketToken = async (socket, next) => {
       return next();
     }
   } catch (e) {
-    return next(new Error("Internal Error"));
+    return next(new Error(`Internal Error: ${e}`));
   }
 };
