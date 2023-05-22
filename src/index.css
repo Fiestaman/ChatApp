@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+} */
+
+.emoji-picker-react {
+  @apply bg-white dark:bg-gray-800;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.emoji-picker-react .emoji-search {
+  @apply dark:bg-gray-800  dark:text-white dark:border-gray-700 dark:focus:border-sky-500;
+}
+
+.emoji-picker-react .emoji-categories {
+  @apply dark:bg-gray-800;
+}
+
+.emoji-picker-react .emoji-scroll-wrapper::-webkit-scrollbar {
+  @apply dark:bg-gray-800 w-5;
+}
+
+.emoji-picker-react .emoji-categories button {
+  @apply contrast-0;
+}
+
+.emoji-picker-react .emoji-scroll-wrapper .emoji-group::before {
+  @apply dark:bg-gray-800  dark:text-white;
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900;
+  }
 }
