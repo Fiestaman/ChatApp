@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.REACT_APP_MONGO_URI;
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,

@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(VerifyToken);
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.REACT_APP_PORT || 8080;
 
 app.use("/api/room", chatRoomRoutes);
 app.use("/api/message", chatMessageRoutes);
