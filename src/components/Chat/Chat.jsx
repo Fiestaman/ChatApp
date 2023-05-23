@@ -12,7 +12,7 @@ import AllUsers from "./AllUsers";
 import ChatRoom from "./ChatRoom";
 import Welcome from "./Welcome";
 
-export default function ChatLayout() {
+export default function Chat() {
   const [users, SetUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [chats, setChats] = useState([]);
