@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 import { Server } from "socket.io";
 
 import "./config/database.js";
@@ -24,6 +25,10 @@ const PORT = process.env.REACT_APP_PORT || 8080;
 app.use("/api/room", chatRoomRoutes);
 app.use("/api/message", chatMessageRoutes);
 app.use("/api/user", userRoutes);
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 const server = app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
