@@ -18,6 +18,10 @@
   -webkit-text-size-adjust: 100%;
 } */
 
+svg {
+  width: 100%;
+}
+
 .emoji-picker-react {
   @apply bg-white dark:bg-gray-800;
 }
