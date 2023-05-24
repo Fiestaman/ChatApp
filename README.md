@@ -6,6 +6,10 @@ An interactive messaging app built using React that utilizes email/password auth
 
 [Live Demo](https://crachatapp.onrender.com/)
 
+## Project Planning
+
+[Trello](https://trello.com/b/K0RqWpgQ/cra-chat-app)
+
 ## Installation
 
 1. Clone the repo.
