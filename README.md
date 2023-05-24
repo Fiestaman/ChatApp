@@ -4,7 +4,7 @@ An interactive messaging app built using React that utilizes email/password auth
 
 ## Live Demo
 
-[Live Demo](https://crachatapp.onrender.com/)
+[Live Demo](https://craca.onrender.com/)
 
 ## Project Planning
 
