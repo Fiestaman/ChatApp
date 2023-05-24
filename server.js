@@ -42,7 +42,7 @@ const server = app.listen(PORT, () => {
 
 const io = new Server(server, {
   cors: {
-    origin: "http://onrender.com",
+    origin: "https://annsonchatapp-x1kp.onrender.com",
     credentials: true,
   },
 });
