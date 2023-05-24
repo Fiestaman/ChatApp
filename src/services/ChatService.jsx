@@ -2,7 +2,12 @@ import axios from "axios";
 import auth from "../config/firebase";
 import { io } from "socket.io-client";
 
-const baseURL = "http://crachatapp.onrender.com:3001/api";
+const port = window.location.port;
+const baseHost = `${window.location.protocol}//${window.location.hostname}:${
+  port ? port : ""
+}`;
+
+const baseURL = baseHost + "/api";
 
 const getUserToken = async () => {
   const user = auth.currentUser;
@@ -13,7 +18,7 @@ const getUserToken = async () => {
 export const initiateSocketConnection = async () => {
   const token = await getUserToken();
 
-  const socket = io("http://crachatapp.onrender.com:3001", {
+  const socket = io("baseHost", {
     auth: {
       token,
     },
