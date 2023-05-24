@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# CRA (Create React App) Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive messaging app built using React that utilizes email/password authentication and websockets.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+[Live Demo](https://crachatapp.onrender.com/)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repo.
+2. Run `npm install` to install.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to Use
 
-### `npm test`
+Create .env file in root folder like the example. Add a file called "serviceAccountKey.json" containing your Firebase service account key into the root folder. Run `npm run dev` to start server and client together.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- React with TailwindCSS for the frontend
+- Node/Express for creating API endpoints
+- MongoDB for storing chat room members and messages
+- Firebase Authentication for authentication
+- Socket.io for making the app real-time
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Basic Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Users can register and login using email/password.
+- Users can create a room to chat with others.
+- Chats are maintained real-time.
+- Emoji picker is also integrated.
+- Users can update their display name and avatar on profile page.
+- Generate random avatars with [DiceBear Avatar API](https://avatars.dicebear.com/docs/http-api)
+- Users can see online status.
+- Dark mode theme.
+- Searching of chats.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Please make sure to update tests as appropriate.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)

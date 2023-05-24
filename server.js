@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 import { Server } from "socket.io";
 
 import "./config/database.js";
@@ -10,6 +12,10 @@ import chatRoomRoutes from "./routes/chatRoom.js";
 import chatMessageRoutes from "./routes/chatMessage.js";
 import userRoutes from "./routes/user.js";
 
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
 dotenv.config();
@@ -17,6 +23,7 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "build")));
 
 app.use(VerifyToken);
 const PORT = process.env.REACT_APP_PORT || 8080;
@@ -25,13 +32,17 @@ app.use("/api/room", chatRoomRoutes);
 app.use("/api/message", chatMessageRoutes);
 app.use("/api/user", userRoutes);
 
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 const server = app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://annsonchatapp-x1kp.onrender.com",
     credentials: true,
   },
 });
