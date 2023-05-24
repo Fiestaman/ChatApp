@@ -18,7 +18,7 @@ const getUserToken = async () => {
 export const initiateSocketConnection = async () => {
   const token = await getUserToken();
 
-  const socket = io("baseHost", {
+  const socket = io(baseHost, {
     auth: {
       token,
     },
