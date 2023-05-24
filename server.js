@@ -23,6 +23,7 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "build")));
 
 app.use(VerifyToken);
 const PORT = process.env.REACT_APP_PORT || 8080;
